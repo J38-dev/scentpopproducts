@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products | Scent Pop</title>
+
+  <link rel="stylesheet" href="style.css"> <!-- your main CSS -->
+  <link rel="stylesheet" href="products.css"> <!-- new -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- SAME NAV -->
+<header class="nav">
+
+  <div class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <nav class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="products.html">Catalogue</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <a href="index.html" class="logo">Scent Pop</a>
+
+  <div class="nav-right">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-regular fa-user"></i>
+    <i class="fa-solid fa-cart-shopping"></i>
+  </div>
+
+</header>
+  
+  <div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="products.html">Catalogue</a>
+  <a href="#">Contact</a>
+</div>
+  
+  <div class="filter-group">
+  
+<div class="filter-bar">
+
+  <div class="filter-title">Filter</div>
+
+  <!-- AVAILABILITY -->
+  <div class="filter-item">
+    <div class="filter-head" onclick="toggleFilter(this)">
+      Availability
+    </div>
+
+    <div class="filter-dropdown">
+      <label><input type="radio" name="stock" value="all" checked> All</label>
+      <label><input type="radio" name="stock" value="in"> In Stock</label>
+      <label><input type="radio" name="stock" value="out"> Out of Stock</label>
+    </div>
+  </div>
+
+  <!-- PRICE -->
+  <div class="filter-item">
+    <div class="filter-head" onclick="toggleFilter(this)">
+      Price
+    </div>
+
+    <div class="filter-dropdown">
+      <input type="number" id="minPrice" placeholder="From">
+      <input type="number" id="maxPrice" placeholder="To">
+    </div>
+  </div>
+
+  <button class="apply-btn" onclick="applyFilters()">Apply</button>
+
+</div>
+    
+  </div>
+
+<!-- TITLE -->
+<div class="before">
+  <h3>Our Full Collection</h3>
+</div>
+  
+  <section class="products-grid">
+
+  <!-- PRODUCT 1 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+    <div class="product-info">
+      <h3>Midnight Oud</h3>
+      <div class="price" data-price="250">R250</div>
+
+      <div class="controls">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span class="qty">0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+    <div class="product-info">
+      <h3>Midnight Oud</h3>
+      <div class="price" data-price="250">R250</div>
+
+      <div class="controls">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span class="qty">0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+    
+    
+    <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+    <div class="product-info">
+      <h3>Midnight Oud</h3>
+      <div class="price" data-price="250">R250</div>
+
+      <div class="controls">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span class="qty">0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+    <div class="product-info">
+      <h3>Midnight Oud</h3>
+      <div class="price" data-price="250">R250</div>
+
+      <div class="controls">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span class="qty">0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+    <div class="product-info">
+      <h3>Midnight Oud</h3>
+      <div class="price" data-price="250">R250</div>
+
+      <div class="controls">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span class="qty">0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COPY THIS BLOCK 11 MORE TIMES -->
+  
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd">
+    <div class="product-info">
+      <h3>Rose Elixir</h3>
+      <div class="price" data-price="220">R220</div>
+
+      <div class="controls">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span class="qty">0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products-grid" id="product-list"></section>
+
+  <div class="checkout-bar">
+  <span>Total: R<span id="total">0</span></span>
+  <button onclick="openCheckout()">Order</button>
+</div>
+  
+<!-- SAME FOOTER -->
+<div class="bottom-section">
+
+<section class="socials">
+  <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+  <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Refund Policy</a>
+    <a href="#">Terms</a>
+  </div>
+  <p class="footer-copy">© 2026 Scent Pop</p>
+</footer>
+
+</div>
+  
+  <div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-content">
+    <h2>Your Order</h2>
+    <p>Total: R<span id="modal-total">0</span></p>
+
+    <button class="confirm">Proceed to Cart</button>
+    <button class="close" onclick="closeCheckout()">Close</button>
+  </div>
+</div>
+
+<script src="products.js"></script>
+</body>
+</html>

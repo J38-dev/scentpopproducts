@@ -1,0 +1,726 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf7f2;
+  color: purple;
+  margin: 0;
+    
+}
+
+/* NAV BASE */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  background-color:   #2f2340;
+  color: #faf7f2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* LEFT LINKS */
+.nav-left {
+  display: flex;
+  gap: 10px;
+  color: #faf7f2;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #faf7f2;
+  font-size: 14px;
+}
+
+
+/* CENTER LOGO */
+.nav .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 40px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  
+  text-decoration: none;
+  color: #f5f2ea; /* your off-white */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transition: 0.2s;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav .logo {
+    position: static;
+    transform: none;
+    font-size: 25px;
+    text-align: center;
+    
+  }
+}
+/* RIGHT ICONS */
+.nav-right {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+/* HERO */
+.hero {
+  width: 100%;
+  height: 72vh;   /* creates the hero frame */
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+
+/* HAMBURGER (hidden desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a {
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* HOVER */
+.nav-left a:hover,
+.nav-right i:hover {
+  color: gold;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* hide desktop links */
+  .nav-left {
+    display: none;
+  }
+
+  /* show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* adjust spacing */
+  .nav {
+    padding: 15px 20px;
+  }
+
+  /* logo stays centered automatically */
+}
+@media (max-width: 768px) {
+
+  .logo {
+    position: static;          /* remove absolute */
+    transform: none;
+    text-align: center;
+    flex: 1;                   /* lets it sit nicely in middle */
+    font-size: 16px;           /* slightly smaller */
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    order: 1;
+  }
+
+  .logo {
+    order: 2;
+  }
+
+  .nav-right {
+    order: 3;
+  }
+}
+
+.intro-words {
+  text-align: center;
+  background-color: #2f2340;
+  padding: 1px;
+  color: #faf7f2;
+}
+
+.products {
+  position: relative;
+}
+
+.products-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.products img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* BUTTON ON IMAGE */
+.products-btn {
+  position: absolute;
+  top: 730px;   /* puts it at bottom of image */
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 12px 25px;
+  background-color: #2f2340;
+  color: #f5f2ea;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.95;
+  font-family: sans-serif;
+}
+
+.products-btn:hover{
+  color: #2f2340;
+  background-color: #f5f2ea;
+  transition: 0.2s;
+}
+
+.before {
+  text-align: center;
+  font-size: 25px;
+  padding: 0px;
+}
+
+.story-card {
+  width: 100%;
+  max-width: 176px;
+  height: 350px;
+  border-radius: px;
+  overflow: hidden;
+  display: block;
+  transition: transform 0.2s ease;
+}
+.story-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.story-card:hover {
+  transform: translateY(-5px);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.drops {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.drops img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* wrapper makes positioning work */
+.img-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* image */
+.img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.drops-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 12px 25px;
+  background-color: #2f2340;
+  color: #f5f2ea;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.95;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.drops-btn:hover{
+  color: #2f2340;
+  background-color: #f5f2ea;
+  transition: 0.2s;
+}
+
+.socials {
+  width: 100%;
+  background-color: #2f2340;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+.social-icon {
+  font-size: 33px;
+  color: #faf7f2; /* off-white icons */
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.social-icon:hover {
+  color: gold; /* optional luxury pop */
+  transform: translateY(-3px);
+}
+
+.footer {
+  background-color: #2f2340;
+  color: #faf7f2;
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #faf7f2;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #faf7f2;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: gold;
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.bottom-section {
+  background-color: #2f2340;
+}
+
+body {
+  padding-top: 90px;
+}
+
+/* GRID */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+/* CARD */
+.product-card {
+  background: #fff;
+  border-radius: px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* INFO */
+.product-info {
+  padding: 15px;
+}
+
+.product-info h3 {
+  margin: 10px 0;
+  font-size: 25px;
+}
+
+.price {
+  color: #2f2340;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls button {
+  background: #2f2340;
+  color: #faf7f2;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.controls button:hover {
+  background: gold;
+  color: #2f2340;
+}
+
+.controls span {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* CHECKOUT BAR */
+.checkout-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2f2340;
+  color: #faf7f2;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+}
+
+.checkout-bar button {
+  background: gold;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.checkout-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-content {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.checkout-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* ================= FILTER BAR ================= */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 👈 key change */
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+  background: #faf7f2;
+  flex-wrap: nowrap; /* 👈 prevents stacking */
+}
+
+/* TITLE */
+.filter-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2f2340;
+  margin-right: 10px;
+}
+
+/* ITEMS */
+.filter-item {
+  position: relative;
+}
+
+/* CLICK HEAD */
+.filter-head {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+  
+  transition: 0.2s ease;
+}
+
+.filter-head:hover {
+  background: #2f2340;
+  color: #faf7f2;
+}
+
+/* ================= FILTER DROPDOWN UPGRADE ================= */
+
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: px;
+  border: 1px solid #eee;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  z-index: 100;
+  min-width: 200px;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(15px) scale(0.98);
+  transition: all 0.25s ease;
+}
+
+/* SHOW STATE */
+.filter-dropdown.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* LABELS */
+.filter-dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #2f2340;
+}
+
+/* CUSTOM RADIO */
+.filter-dropdown input[type="radio"] {
+  accent-color: #2f2340;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* INPUT BOXES */
+.filter-dropdown input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* INPUT FOCUS */
+.filter-dropdown input:focus {
+  outline: none;
+  border-color: #2f2340;
+  box-shadow: 0 0 0 2px rgba(47,35,64,0.1);
+}
+
+/* ================= FILTER HEAD ================= */
+.filter-head {
+  cursor: pointer;
+  font-size: 14px;
+
+  /* FIX: proper padding both sides */
+  padding: 15px 18px;
+
+  
+  transition: 0.2s ease;
+
+  /* makes it feel more like a button */
+  border: 1px solid #eee;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* hover state */
+.filter-head:hover {
+  background: #2f2340;
+  color: #faf7f2;
+  border-color: #2f2340;
+}
+
+/* active state */
+.filter-head.active {
+  background: #2f2340;
+  color: #faf7f2;
+  border-color: #2f2340;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .filter-dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .filter-dropdown.show {
+    transform: none;
+  }
+
+  .filter-head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #eee;
+  }
+}
+/* BUTTON */
+.apply-btn {
+  background: #2f2340;
+  color: #faf7f2;
+  border: none;
+  padding: 15px 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.apply-btn:hover {
+  background: gold;
+  color: #2f2340;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  .filter-head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #eee;
+  }
+
+  .filter-dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .apply-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  flex: 1; /* 👈 lets it behave like a row container */
+}
+
+
+
+.filter-dropdown input[type="number"] {
+  width: 80px;   /* 👈 makes them short */
+  padding: 8px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
