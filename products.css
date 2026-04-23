@@ -741,3 +741,95 @@ body {
   border: 1px solid #ddd;
   font-size: 13px;
 }
+
+
+/* ================= GLOBAL MOBILE FIXES ================= */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* HERO IMAGE FIX */
+  .hero {
+    height: 50vh;
+  }
+
+  .hero img {
+    object-fit: cover; /* better on mobile */
+  }
+
+  /* PRODUCTS GRID FIX */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 15px;
+  }
+
+  @media (max-width: 450px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* PRODUCT IMAGE FIX */
+  .product-card img {
+    height: 180px;
+  }
+
+  /* STORY GRID EXTRA SAFETY */
+  .story-card {
+    max-width: 100%;
+    height: 250px;
+  }
+
+  /* NAV TEXT SPACING FIX */
+  .nav {
+    padding: 12px 15px;
+  }
+
+  /* SOCIAL ICONS */
+  .socials {
+    gap: 20px;
+    padding: 25px 10px;
+  }
+
+  .social-icon {
+    font-size: 26px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 25px 15px;
+  }
+
+  /* BUTTON FIX (IMPORTANT) */
+  .products-btn {
+    position: static;   /* 🔥 fixes your broken 730px issue */
+    transform: none;
+    margin: 15px auto;
+    display: block;
+  }
+
+  /* DROPS BUTTON FIX */
+  .drops-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  /* FILTER FIX */
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .filter-dropdown input[type="number"] {
+    width: 100%;
+  }
+}
