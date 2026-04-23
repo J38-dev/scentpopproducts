@@ -655,181 +655,106 @@ body {
   border-color: #2f2340;
 }
 
-/* ================= MOBILE FIX ================= */
+/* ===================== MOBILE FULL FIX ===================== */
 @media (max-width: 768px) {
 
-  .filter-dropdown {
-    position: static;
-    width: 100%;
-    margin-top: 10px;
-    box-shadow: none;
-    transform: none;
-  }
-
-  .filter-dropdown.show {
-    transform: none;
-  }
-
-  .filter-head {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #eee;
-  }
-}
-/* BUTTON */
-.apply-btn {
-  background: #2f2340;
-  color: #faf7f2;
-  border: none;
-  padding: 15px 18px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.apply-btn:hover {
-  background: gold;
-  color: #2f2340;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .filter-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-    gap: 15px;
-  }
-
-  .filter-item {
-    width: 100%;
-  }
-
-  .filter-head {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #eee;
-  }
-
-  .filter-dropdown {
-    position: static;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .apply-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.filter-group {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  flex: 1; /* 👈 lets it behave like a row container */
-}
-
-
-
-.filter-dropdown input[type="number"] {
-  width: 80px;   /* 👈 makes them short */
-  padding: 8px;
-  border: 1px solid #ddd;
-  font-size: 13px;
-}
-
-
-/* ================= GLOBAL MOBILE FIXES ================= */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  /* prevent horizontal scrolling */
   html, body {
     overflow-x: hidden;
   }
 
-  /* HERO IMAGE FIX */
+  /* FIX NAV OVERLAP SPACE */
+  body {
+    padding-top: 70px; /* smaller than desktop */
+  }
+
+  /* HERO FIX */
   .hero {
-    height: 50vh;
+    height: 45vh;
+    padding-top: 0;
   }
 
-  .hero img {
-    object-fit: cover; /* better on mobile */
-  }
-
-  /* PRODUCTS GRID FIX */
+  /* PRODUCTS GRID FIX (THIS IS YOUR MAIN ISSUE) */
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
+    grid-template-columns: 1fr; /* 🔥 FORCE 1 COLUMN ON MOBILE */
+    padding: 15px;
     gap: 15px;
   }
 
-  @media (max-width: 450px) {
-    .products-grid {
-      grid-template-columns: 1fr;
-    }
+  /* PRODUCT CARD FIX */
+  .product-card {
+    width: 100%;
   }
 
-  /* PRODUCT IMAGE FIX */
   .product-card img {
-    height: 180px;
+    height: 200px;
   }
 
-  /* STORY GRID EXTRA SAFETY */
-  .story-card {
-    max-width: 100%;
-    height: 250px;
+  /* FILTER BAR STACK CLEANLY */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 15px;
   }
 
-  /* NAV TEXT SPACING FIX */
+  .filter-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* NAV FIX */
   .nav {
-    padding: 12px 15px;
+    padding: 10px 15px;
   }
 
-  /* SOCIAL ICONS */
-  .socials {
-    gap: 20px;
-    padding: 25px 10px;
-  }
-
-  .social-icon {
-    font-size: 26px;
-  }
-
-  /* FOOTER */
-  .footer {
-    padding: 25px 15px;
-  }
-
-  /* BUTTON FIX (IMPORTANT) */
-  .products-btn {
-    position: static;   /* 🔥 fixes your broken 730px issue */
-    transform: none;
-    margin: 15px auto;
-    display: block;
-  }
-
-  /* DROPS BUTTON FIX */
-  .drops-btn {
-    padding: 10px 18px;
+  .nav-right {
+    gap: 12px;
     font-size: 13px;
   }
 
-  /* FILTER FIX */
-  .filter-group {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+  /* LOGO SMALLER */
+  .logo {
+    font-size: 18px;
   }
 
-  .filter-dropdown input[type="number"] {
-    width: 100%;
+  /* CHECKOUT BAR FIX (IMPORTANT FOR WHITE SPACE ISSUE) */
+  .checkout-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* GIVE SPACE SO FOOTER IS NOT HIDDEN */
+  body {
+    padding-bottom: 120px;
+  }
+
+  /* SOCIALS FIX */
+  .socials {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 10px;
+  }
+
+  /* FOOTER CLEANUP */
+  .footer {
+    padding: 25px 15px;
+  }
+}
+
+/* SMALL PHONES EXTRA CLEAN */
+@media (max-width: 480px) {
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 170px;
+  }
+
+  .filter-head {
+    font-size: 13px;
   }
 }
